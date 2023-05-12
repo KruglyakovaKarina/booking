@@ -5,7 +5,7 @@ body {
 /* Navbar Header */
 .navbar,
 .header {
-  background-color: rgb(0, 52, 121);
+  background-color: #003479;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,6 +13,10 @@ body {
 
 .navbar {
   height: 50px;
+}
+
+.header {
+  position: relative;
 }
 
 .navContainer {
@@ -39,12 +43,12 @@ body {
 
 .navButton {
   border: none;
-  color: rgb(0, 52, 121);
+  color: #003479;
   margin-left: 20px;
   padding: 7px 10px;
   cursor: pointer;
-  font-size: 18px;
-  border-radius: 20px;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
 .headerList {
@@ -65,4 +69,95 @@ body {
   padding: 10px;
 }
 
-/*  */
+/* Search */
+.headerSearch {
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  border: 3px solid #ffc400;
+  border-radius: 5px;
+  padding: 10px 0px;
+  align-items: center;
+  background-color: white;
+  color: black;
+  position: absolute;
+  bottom: -25px;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.headerSearchItem {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.headerSearchInput {
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.headerSearchInput::placeholder {
+  color: black;
+}
+
+.searchIcons {
+  color: #797979;
+}
+
+.searchButton {
+  background-color: #0061bb;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.headerSearchText {
+  cursor: pointer;
+}
+
+.datePicker,
+.options {
+  position: absolute;
+  top: 53px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 20px lightgray;
+}
+
+.options {
+  padding: 10px;
+  background-color: white;
+}
+
+.optionItem {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+}
+
+.optionCounter {
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.optionCounterNumber {
+  min-width: 20px;
+  text-align: center;
+}
+
+.optionCounterBtn {
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
