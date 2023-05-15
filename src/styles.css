@@ -250,3 +250,50 @@ body {
 .pListTitles > span {
   font-size: 14px;
 }
+
+/* GuestsLove */
+.guestsLove {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.guestsLoveItem {
+  flex: 1;
+  gap: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+.guestLoveImg {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.guestLoveName {
+  margin: 2px 0px;
+  font-size: 16px;
+}
+
+.guestLoveCity,
+.guestLovePrice,
+.guestLoveRating {
+  font-size: 14px;
+}
+
+.guestLoveRating {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.guestLoveRating > button {
+  background-color: #003479;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 5px;
+}
