@@ -376,3 +376,223 @@ body {
   margin: 20px 0;
   font-size: 12px;
 }
+
+/* SearchResult */
+.searchResult {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.searchResultWrapper {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  gap: 20px;
+}
+
+.searchItem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.search {
+  background-color: #ffc400;
+  flex: 1;
+  padding: 15px;
+  border-radius: 10px;
+  position: sticky;
+  top: 10px;
+  height: max-content;
+}
+
+.result {
+  flex: 3;
+}
+
+.searchTitle {
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.searchItemDescr {
+  font-size: 13px;
+}
+
+.searchItemInput {
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.searchItemDate {
+  background-color: white;
+  padding: 10px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.datePickerSearch {
+  position: absolute;
+  bottom: 0;
+}
+
+.searchOption {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  font-size: 14px;
+  align-items: center;
+}
+
+.searchOptionInput {
+  height: 20px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.searchResultBtn {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #0061bb;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ResultItem */
+.resultItem {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.riDescr {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+
+.riImg {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.riTitle {
+  margin: 0;
+  font-size: 18px;
+  color: #0061bb;
+}
+
+.riTitle,
+.riDistance,
+.riTaxiOp {
+  margin-bottom: 7px;
+}
+
+.riName {
+  font-weight: 700;
+  margin: 0;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.riDistance,
+.riFeatures,
+.riTaxiOp,
+.riCancelop,
+.riCancelopSubtitle {
+  font-size: 12px;
+}
+
+.riTaxiOp {
+  background-color: #008234;
+  color: white;
+  padding: 3px 5px;
+  width: max-content;
+  border-radius: 5px;
+}
+
+.riCancelop,
+.riCancelopSubtitle {
+  color: #008234;
+  margin-top: 5px;
+}
+
+.riCancelop {
+  font-weight: 600;
+}
+
+.riDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.riRating {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.riRatingTexts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.riRating > button {
+  background-color: #003479;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.riDetailTexts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.riRatingReviews,
+.riTaxesOp {
+  font-size: 12px;
+}
+
+.riRatingText,
+.riPrice {
+  font-weight: 600;
+}
+
+.riCheckBtn {
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #0061bb;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.riCheckBtnIcon {
+  padding-left: 10px;
+  font-size: 12px;
+}
