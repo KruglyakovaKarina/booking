@@ -358,6 +358,11 @@ body {
   font-size: 14px;
 }
 
+.footerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .footerLists {
   display: flex;
   justify-content: space-between;
@@ -595,4 +600,103 @@ body {
 .riCheckBtnIcon {
   padding-left: 10px;
   font-size: 12px;
+}
+
+/* Hotel */
+.hotel {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.hotelWrapper {
+  width: 100%;
+  max-width: 1024px;
+}
+
+.hotelName {
+  margin: 0;
+  font-size: 24px;
+}
+
+.hotelInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.hotelTitles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hotelLocation {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.hotelDistance {
+  color: #0061bb;
+  font-weight: 600;
+}
+
+.hotelBookOpt {
+  color: #008234;
+  font-weight: 600;
+}
+
+.hotelReserveBtn {
+  color: white;
+  background-color: #0061bb;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  padding: 0 15px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.hotelImages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.hotelImgWrapper {
+  width: 33%;
+}
+
+.hotelImg {
+  width: 100%;
+  object-fit: cover;
+}
+
+.hotelDetails {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  gap: 30px;
+}
+
+.hotelDetailsTexts {
+  flex: 5;
+}
+
+.hotelDetailsTexts > h2 {
+  margin: 0;
+}
+
+.hotelDetailsPrice {
+  flex: 2;
+  background-color: #f0f6ff;
+}
+
+.hotelDetailsPrice {
+  padding: 20px;
+}
+
+.hotelPrice {
+  font-weight: 400;
 }
