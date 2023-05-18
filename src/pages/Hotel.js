@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MailList from '../components/MailList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleLeft,
+  faAngleRight,
+  faLocationDot,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons';
 import '../styles.css';
 
 const Hotel = () => {
@@ -37,11 +42,51 @@ const Hotel = () => {
       src: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/319717872.jpg?k=f5402012f8bdd014033c82bf5256a8e7e1d81273b240065edb55386854ca1850&o=&hp=1',
     },
   ];
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [openPhoto, setOpenPhoto] = useState(false);
+
+  const handleOpen = (i) => {
+    setSlideIndex(i);
+    setOpenPhoto(true);
+  };
+
+  const handleMove = (direction) => {
+    let newSlideIndex;
+    if (direction === 'left') {
+      newSlideIndex = slideIndex === 0 ? 8 : slideIndex - 1;
+    } else {
+      newSlideIndex = slideIndex === 8 ? 0 : slideIndex + 1;
+    }
+    setSlideIndex(newSlideIndex);
+  };
+
   return (
     <div>
       <Navbar />
       <Header type='list' />
       <div className='hotel'>
+        {openPhoto && (
+          <div className='slider'>
+            <FontAwesomeIcon
+              icon={faXmark}
+              className='sliderClose'
+              onClick={() => setOpenPhoto(false)}
+            />
+            <FontAwesomeIcon
+              icon={faAngleLeft}
+              className='sliderArrow'
+              onClick={() => handleMove('left')}
+            />
+            <div className='sliderWrapper'>
+              <img src={photos[slideIndex].src} alt='' className='sliderImg' />
+            </div>
+            <FontAwesomeIcon
+              icon={faAngleRight}
+              className='sliderArrow'
+              onClick={() => handleMove('right')}
+            />
+          </div>
+        )}
         <div className='hotelWrapper'>
           <div className='hotelInfo'>
             <div className='hotelTitles'>
@@ -63,9 +108,14 @@ const Hotel = () => {
             <button className='hotelReserveBtn'>Reserve or Book Now!</button>
           </div>
           <div className='hotelImages'>
-            {photos.map((photo) => (
+            {photos.map((photo, i) => (
               <div className='hotelImgWrapper'>
-                <img src={photo.src} alt='' className='hotelImg' />
+                <img
+                  onClick={() => handleOpen(i)}
+                  src={photo.src}
+                  alt=''
+                  className='hotelImg'
+                />
               </div>
             ))}
           </div>
@@ -106,7 +156,9 @@ const Hotel = () => {
               <h2 className='hotelPrice'>
                 <b>6196 BYN</b> (9 nights)
               </h2>
-              <button className='hotelReserveBtn'>Reserve or Book Now!</button>
+              <button className='hotelReserveBtn widthBtn'>
+                Reserve or Book Now!
+              </button>
             </div>
           </div>
         </div>

@@ -375,6 +375,7 @@ body {
 .footerListItem {
   color: #0061bb;
   margin-bottom: 7px;
+  cursor: pointer;
 }
 
 .footerText {
@@ -605,13 +606,16 @@ body {
 /* Hotel */
 .hotel {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 30px;
 }
 
 .hotelWrapper {
   width: 100%;
   max-width: 1024px;
+  display: flex;
+  flex-direction: column;
 }
 
 .hotelName {
@@ -657,6 +661,11 @@ body {
   padding: 0 15px;
   font-weight: 600;
   font-size: 14px;
+  cursor: pointer;
+}
+
+.widthBtn {
+  width: 100%;
 }
 
 .hotelImages {
@@ -671,6 +680,7 @@ body {
 .hotelImg {
   width: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .hotelDetails {
@@ -691,12 +701,62 @@ body {
 .hotelDetailsPrice {
   flex: 2;
   background-color: #f0f6ff;
+  height: max-content;
 }
 
 .hotelDetailsPrice {
   padding: 20px;
 }
 
+.hotelDetailsPrice > h3 {
+  margin-top: 0;
+}
+
 .hotelPrice {
   font-weight: 400;
+}
+
+/* Slider */
+.slider {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.295);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+
+.sliderWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderImg {
+  width: 70%;
+  height: 70%;
+  user-select: none;
+}
+
+.sliderClose,
+.sliderArrow {
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+
+.sliderClose {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+}
+
+.sliderArrow {
+  padding: 60px;
 }
