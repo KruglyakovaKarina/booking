@@ -29,6 +29,17 @@ app.use('/users', usersRoute);
 app.use('/rooms', roomsRoute);
 app.use('/hotels', hotelsRoute);
 
+app.use((err, req, res, next) => {
+  const errStatus = err.status || 500;
+  const errMessage = err.message || 'Something went wrong';
+  return res.status(errStatus).json({
+    success: false,
+    status: errStatus,
+    message: errMessage,
+    stack: err.stack,
+  });
+});
+
 app.listen(process.env.PORT, () => {
   connect();
   console.log('Connected to backend!');
