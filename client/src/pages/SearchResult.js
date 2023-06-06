@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { DateRange } from 'react-date-range';
 import ResultItem from '../components/ResultItem';
+import useFetch from '../hooks/useFetch';
 
 const SearchResult = () => {
   const location = useLocation();
@@ -13,6 +14,14 @@ const SearchResult = () => {
   const [date, setDate] = useState(location.state.date);
   const [options, setOptions] = useState(location.state.options);
   const [openDate, setOpenDate] = useState(false);
+  const [min, setMin] = useState(0);
+  const [max, setMax] = useState(100000);
+  const { data, loading, error, reFetch } = useFetch(
+    `/hotels?city=${destination}&min=${min}&max=${max}`
+  );
+
+  const handleClick = () => {};
+
   return (
     <div>
       <Navbar />
@@ -58,12 +67,24 @@ const SearchResult = () => {
                 <span className='searchItemDescr'>Options</span>
 
                 <div className='searchOption'>
-                  <span className='optionsDescr'>Min price (night)</span>
-                  <input type='text' className='searchOptionInput' />
+                  <span className='optionsDescr'>Min price</span>
+                  <input
+                    type='number'
+                    onChange={(e) => setMin(e.target.value)}
+                    className='searchOptionInput'
+                    min={0}
+                    placeholder={min}
+                  />
                 </div>
                 <div className='searchOption'>
-                  <span className='optionsDescr'>Max price (night)</span>
-                  <input type='text' className='searchOptionInput' />
+                  <span className='optionsDescr'>Max price</span>
+                  <input
+                    type='number'
+                    onChange={(e) => setMax(e.target.value)}
+                    className='searchOptionInput'
+                    min={0}
+                    placeholder={max}
+                  />
                 </div>
                 <div className='searchOption'>
                   <span className='optionsDescr'>Adult</span>
@@ -93,19 +114,21 @@ const SearchResult = () => {
                   />
                 </div>
               </div>
-              <button className='searchResultBtn'>Search</button>
+              <button className='searchResultBtn' onClick={handleClick}>
+                Search
+              </button>
             </div>
           </div>
           <div className='result'>
-            <ResultItem />
-            <ResultItem />
-            <ResultItem />
-            <ResultItem />
-            <ResultItem />
-            <ResultItem />
-            <ResultItem />
-            <ResultItem />
-            <ResultItem />
+            {loading ? (
+              'Loading'
+            ) : (
+              <>
+                {data.map((item) => (
+                  <ResultItem item={item} key={item._id} />
+                ))}
+              </>
+            )}
           </div>
         </div>
       </div>
