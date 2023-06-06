@@ -248,8 +248,9 @@ body {
   margin: 4px 0px;
 }
 
-.pListTitles > span {
+.pListDescription {
   font-size: 14px;
+  text-transform: lowercase;
 }
 
 /* GuestsLove */
